@@ -35,6 +35,16 @@ typedef NS_ENUM(NSInteger,HHTimerButtonState) {
 @property (nonatomic,copy) void(^refreshCallback)(HHTimerButton *btn,NSTimeInterval interval,BOOL isPause);
 
 /**
+ 正常状态下按钮样式，默认nil
+ */
+@property (nonatomic,copy) void(^normalStateButtonStyle) (HHTimerButton *btn);
+
+/**
+ normalStateButtonStyle 不为空normalTitle失效
+ */
+@property (nonatomic,strong) NSString *normalTitle;
+
+/**
  停止计时
  */
 - (void)stopTiming;

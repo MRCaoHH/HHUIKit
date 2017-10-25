@@ -88,6 +88,9 @@
 - (void)normalStyle{
     _timerState = HHTimerButtonState_Normal;
     self.enabled = YES;
+    if (self.normalStateButtonStyle) {
+        self.normalStateButtonStyle(self);
+    }
 }
 
 - (void)pauseStyle{
@@ -167,6 +170,5 @@
 
 #pragma mark - 内存释放 -
 - (void)dealloc{
-    NSLog(@"11111111");
 }
 @end
